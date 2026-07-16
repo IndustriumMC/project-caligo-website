@@ -12,7 +12,7 @@ Minecraft network owners, operators, and infrastructure decision-makers who need
 
 Project Caligo markets and sells Mirage, a managed commercial offering for seamless Minecraft server meshing. The website should communicate the player-facing and operational benefits of Mirage without explaining its internal implementation. Success means a qualified visitor understands the value, trusts the service, and submits the website contact form with an email address so the Project Caligo team can follow up directly.
 
-The form is the primary contact path. Existing secondary paths remain available: `contact@industrium.net` and the Industrium Discord server at `https://discord.gg/zKJRArY8fq`. The website should not introduce new communication channels.
+The form is the primary contact path. Existing secondary paths remain available: `contact@industrium.net` and the Industrium Discord server at `https://industrium.net/caligo`. The website should not introduce new communication channels.
 
 ## Brand Personality
 

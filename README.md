@@ -49,4 +49,4 @@ Vercel provisions and renews HTTPS automatically after the DNS records have prop
 
 - Website form: `/api/contact`
 - Email: `contact@industrium.net`
-- Discord: `https://discord.gg/zKJRArY8fq`
+- Discord: `https://industrium.net/caligo`
