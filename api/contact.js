@@ -101,10 +101,19 @@ export default async function contact(request, response) {
 
   const email = normalize(body.email, 254).toLowerCase();
   const network = normalize(body.network, 100);
+  const proxies = normalize(body.proxies, 16);
+  const backends = normalize(body.backends, 16);
   const message = normalize(body.message, 1800);
 
   if (!EMAIL_PATTERN.test(email)) {
     return send(400, { error: "Enter a valid email address." });
+  }
+
+  if (
+    (proxies && (!/^\d+$/.test(proxies) || Number(proxies) < 1 || Number(proxies) > 999)) ||
+    (backends && (!/^\d+$/.test(backends) || Number(backends) < 2 || Number(backends) > 9999))
+  ) {
+    return send(400, { error: "Enter valid proxy and backend counts." });
   }
 
   const clientAddress = getClientAddress(request);
@@ -127,6 +136,8 @@ export default async function contact(request, response) {
   const fields = [
     { name: "Reply email", value: escapeDiscord(email), inline: false },
     { name: "Network", value: network ? escapeDiscord(network) : "Not provided", inline: false },
+    { name: "Proxy count", value: proxies ? escapeDiscord(proxies) : "Not provided", inline: true },
+    { name: "Backend count", value: backends ? escapeDiscord(backends) : "Not provided", inline: true },
   ];
 
   try {

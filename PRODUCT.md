@@ -6,17 +6,43 @@ brand
 
 ## Users
 
-Minecraft network owners, operators, and infrastructure decision-makers who need to scale beyond a single server without making the player experience feel fragmented. They arrive evaluating whether Mirage is a credible commercial service for their network and need a clear path to discuss fit, pricing, deployment, and support.
+Minecraft network owners, operators, and infrastructure decision-makers with at least one proxy and two backend servers. This is the minimum network shape Mirage can serve. The number of proxies, backend servers, resources, and hosting requirements are evaluated with the team.
 
 ## Product Purpose
 
-Project Caligo markets and sells Mirage, a managed commercial offering for seamless Minecraft server meshing. The website should communicate the player-facing and operational benefits of Mirage without explaining its internal implementation. Success means a qualified visitor understands the value, trusts the service, and submits the website contact form with an email address so the Project Caligo team can follow up directly.
+Project Caligo markets and sells Mirage as a managed proprietary service for seamless backend transfers and Minecraft server meshing.
+
+Seamless transfer means removing the loading screen and visible artifacts between backend server transfers. It does not remove or change the loading screen shown when a player first connects to a proxy or server. During a backend transfer, the player should retain control and continue gameplay without seeing the infrastructure change underneath.
+
+Server meshing means synchronizing relevant players and entities across servers so they can remain visible across backend boundaries. The long-term ambition is to move separate Minecraft servers closer to one shared world and enable experiences that disconnected server architecture has made impractical.
+
+The website should present these outcomes clearly without exposing implementation details. Success means a qualified visitor understands the exact value, the minimum network requirement, the managed service model, and the route to a tailored commercial agreement.
 
 The form is the primary contact path. Existing secondary paths remain available: `contact@industrium.net` and the Industrium Discord server at `https://industrium.net/caligo`. The website should not introduce new communication channels.
 
+## Commercial Model
+
+Every Mirage agreement is negotiated with the team. Monthly and yearly licences are available depending on the network, resources, proxy count, backend count, deployment, hosting, and support needs. Lifetime licences are not offered. Source code and distributable JAR files are not sold or provided.
+
+Project Caligo can include deployment, integration, managed proxies, hosting options, updates, maintenance, documentation, infrastructure tooling, and direct technical support. Mirage remains proprietary and is operated as a managed service.
+
+Funds support continued development of the Industrium Minecraft network, the Project Caligo team, and the infrastructure used to operate the service.
+
+## Qualification and Follow-up
+
+The team reviews each form submission for network fit. A suitable lead receives a direct reply and begins a discussion about requirements and commercial terms. The form may collect optional proxy and backend counts to make the first review more useful.
+
+## Proof
+
+The first public Mirage demonstration is available at `https://youtu.be/6i3NGjgjXhM` and has passed 30,000 views. The response includes positive reactions and comments from people who had attempted similar systems but stopped because of complexity or maintenance requirements. This supports the managed-service position: Project Caligo provides the team and ongoing operation that individual network builders may not want to maintain alone.
+
+## Ownership and Relationship
+
+Industrium is the Minecraft network where Mirage is developed and used. Project Caligo is the program that brings Mirage to other network operators. BENZOOgataga owns and currently operates Industrium, Project Caligo, and Mirage. Commercial agreements are currently made with BENZOOgataga.
+
 ## Brand Personality
 
-Precise, mysterious, technically authoritative. The experience should combine Project Caligo's current dark, faceted visual identity with the clarity and navigational usefulness of PaperMC. It should feel credible to experienced Minecraft operators without becoming a technical documentation site.
+Precise, ambitious, and technically confident. The experience should combine Project Caligo's current dark, faceted visual identity with the clarity and navigational usefulness of PaperMC. It should create excitement about what Minecraft networks may become without buzzwords, inflated exclusivity, or unsupported hype.
 
 ## Anti-references
 
@@ -24,15 +50,21 @@ Precise, mysterious, technically authoritative. The experience should combine Pr
 - Blocky Minecraft fan-site aesthetics and novelty pixel-art presentation.
 - Generic SaaS dashboards, interchangeable startup cards, or enterprise software templates.
 - Technical architecture explanations that distract from the commercial value of Mirage.
+- Claims that Mirage removes the initial player connection screen.
+- Rival positioning against Velocity, Paper, or other infrastructure projects.
+- Claims that Mirage is exclusive or that nobody else has attempted similar work.
 - Contact flows that expose or invent additional communication channels.
 
 ## Design Principles
 
-1. Sell the outcome, not the mechanism. Lead with continuity, scale, and player experience rather than implementation details.
-2. Make trust visible. Every claim, visual, and interaction should feel deliberate enough for an infrastructure purchase.
-3. Keep the path to conversation obvious. The form is the primary conversion action; email and Discord are clear alternatives.
-4. Preserve the illusion. Use Project Caligo's butterfly metaphor and faceted visual language to make separation becoming continuity memorable.
-5. Borrow clarity, not appearance. Use PaperMC's direct hierarchy and useful navigation while retaining Project Caligo's distinct identity.
+1. Be exact about the loading screen. Mirage removes loading screens between backend transfers, not during the initial connection.
+2. Sell the outcome, not the mechanism. Lead with retained control, cross-server visibility, managed operation, and ambitious world design.
+3. Present Mirage as an alternative for specific network needs, not as a rival to familiar Minecraft infrastructure.
+4. Make qualification clear. Mirage requires at least one proxy and two backend servers.
+5. Make trust visible. Every claim, visual, and interaction should feel deliberate enough for an infrastructure purchase.
+6. Keep the path to conversation obvious. The form is the primary conversion action; email and Discord are clear alternatives.
+7. Preserve the illusion. Use Project Caligo's butterfly metaphor and faceted visual language to make separation becoming continuity memorable.
+8. Borrow clarity, not appearance. Use PaperMC's direct hierarchy and useful navigation while retaining Project Caligo's distinct identity.
 
 ## Accessibility & Inclusion
 

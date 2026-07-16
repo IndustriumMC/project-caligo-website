@@ -187,6 +187,12 @@ if (contactForm) {
       return;
     }
 
+    if (!contactForm.checkValidity()) {
+      setStatus("Check the proxy and backend counts before sending.", "error");
+      contactForm.reportValidity();
+      return;
+    }
+
     if (!navigator.onLine) {
       setStatus("You're offline. Your message has not been sent.", "offline");
       return;

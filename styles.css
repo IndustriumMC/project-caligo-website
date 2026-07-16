@@ -946,6 +946,64 @@ li {
   line-height: 1.7;
 }
 
+.proof-section {
+  display: grid;
+  width: var(--page);
+  margin: 0 auto;
+  padding: clamp(6rem, 11vw, 10rem) 0;
+  grid-template-columns: minmax(0, 0.9fr) minmax(420px, 1.1fr);
+  gap: clamp(4rem, 9vw, 9rem);
+  border-top: 1px solid var(--line);
+}
+
+.proof-intro h2 {
+  max-width: 12ch;
+  margin-top: 1rem;
+  font-size: clamp(2.6rem, 5vw, 4.6rem);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.proof-intro > p {
+  max-width: 36rem;
+  margin-top: 1.5rem;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.proof-intro .text-link {
+  display: inline-block;
+  margin-top: 2rem;
+}
+
+.proof-response {
+  border-top: 1px solid var(--line-strong);
+}
+
+.proof-response article {
+  display: grid;
+  min-height: 150px;
+  padding: 2rem 0;
+  align-items: center;
+  grid-template-columns: minmax(160px, 0.45fr) minmax(0, 0.55fr);
+  gap: 2rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.proof-response span {
+  color: var(--text);
+  font-size: 0.88rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.proof-response p {
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
 .program-section {
   display: grid;
   grid-template-columns: minmax(0, 0.8fr) minmax(420px, 1.2fr);
@@ -1218,6 +1276,17 @@ li {
 
 .form-field + .form-field {
   margin-top: 1.7rem;
+}
+
+.form-counts {
+  display: grid;
+  margin-top: 1.7rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.form-counts .form-field + .form-field {
+  margin-top: 0;
 }
 
 .form-field label {
@@ -1631,6 +1700,7 @@ li {
   }
 
   .program-section,
+  .proof-section,
   .contact-section {
     gap: 4rem;
   }
@@ -1745,6 +1815,7 @@ li {
 
   .section-heading,
   .benefit-heading,
+  .proof-section,
   .program-section,
   .contact-section,
   .legal-hero,
@@ -1830,6 +1901,7 @@ li {
   }
 
   .product-section,
+  .proof-section,
   .program-section,
   .journey-section,
   .about-section,
@@ -1882,6 +1954,7 @@ li {
 
   .section-heading h2,
   .benefit-heading h2,
+  .proof-intro h2,
   .program-intro h2,
   .journey-heading h2,
   .about-copy h2,
@@ -1938,6 +2011,19 @@ li {
   .benefit-perspectives article {
     grid-template-columns: 1fr;
     gap: 0.65rem;
+  }
+
+  .proof-response article {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+  }
+
+  .form-counts {
+    grid-template-columns: 1fr;
+  }
+
+  .form-counts .form-field + .form-field {
+    margin-top: 0.25rem;
   }
 
   .offer-list article {
