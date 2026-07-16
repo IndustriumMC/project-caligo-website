@@ -38,7 +38,7 @@ Mirage is currently operated from servers hosted in France and is primarily offe
 
 ## Proof
 
-The first public Mirage demonstration is available at `https://youtu.be/6i3NGjgjXhM` and has passed 30,000 views. The response includes positive reactions and comments from people who had attempted similar systems but stopped because of complexity or maintenance requirements. This supports the managed-service position: Project Caligo provides the team and ongoing operation that individual network builders may not want to maintain alone.
+The first public Mirage demonstration is available at `https://youtu.be/6i3NGjgjXhM` and has passed 30,000 views. The response includes positive reactions and strong interest from people who understood the scale of the infrastructure challenge. This supports the managed-service position: Project Caligo provides the team and ongoing operation that lets network builders focus on the worlds they want to create.
 
 ## Ownership and Relationship
 
@@ -82,6 +82,7 @@ Precise, ambitious, and technically confident. The experience should combine Pro
 7. Keep the path to conversation obvious. The form is the primary conversion action; email and Discord are clear alternatives.
 8. Preserve the illusion. Use Project Caligo's butterfly metaphor and faceted visual language to make separation becoming continuity memorable.
 9. Borrow clarity, not appearance. Use PaperMC's direct hierarchy and useful navigation while retaining Project Caligo's distinct identity.
+10. Keep sales copy positive. Present fit, capabilities, available terms, and managed outcomes. Reserve restrictions, exclusions, and defensive language for the relevant legal pages and private commercial discussions.
 
 ## Accessibility & Inclusion
 
