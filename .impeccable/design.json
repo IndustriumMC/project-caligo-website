@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-16T17:58:58Z",
+  "title": "Design System: Project Caligo",
+  "extensions": {
+    "colorMeta": {
+      "midnight-infrastructure": {
+        "role": "neutral",
+        "displayName": "Midnight Infrastructure",
+        "canonical": "#06080f",
+        "tonalRamp": ["oklch(15% 0.015 270)", "oklch(25% 0.015 270)", "oklch(35% 0.015 270)", "oklch(47% 0.015 270)", "oklch(59% 0.015 270)", "oklch(71% 0.015 270)", "oklch(83% 0.015 270)", "oklch(95% 0.015 270)"]
+      },
+      "deep-surface": {
+        "role": "neutral",
+        "displayName": "Deep Surface",
+        "canonical": "#0a0d17",
+        "tonalRamp": ["oklch(15% 0.02 270)", "oklch(25% 0.02 270)", "oklch(35% 0.02 270)", "oklch(47% 0.02 270)", "oklch(59% 0.02 270)", "oklch(71% 0.02 270)", "oklch(83% 0.02 270)", "oklch(95% 0.02 270)"]
+      },
+      "raised-surface": {
+        "role": "neutral",
+        "displayName": "Raised Surface",
+        "canonical": "#101524",
+        "tonalRamp": ["oklch(15% 0.03 270)", "oklch(25% 0.03 270)", "oklch(35% 0.03 270)", "oklch(47% 0.03 270)", "oklch(59% 0.03 270)", "oklch(71% 0.03 270)", "oklch(83% 0.03 270)", "oklch(95% 0.03 270)"]
+      },
+      "mirage-periwinkle": {
+        "role": "primary",
+        "displayName": "Mirage Periwinkle",
+        "canonical": "#8d9bff",
+        "tonalRamp": ["oklch(15% 0.16 275)", "oklch(25% 0.16 275)", "oklch(35% 0.16 275)", "oklch(47% 0.16 275)", "oklch(59% 0.16 275)", "oklch(71% 0.16 275)", "oklch(83% 0.16 275)", "oklch(95% 0.16 275)"]
+      },
+      "refracted-light": {
+        "role": "primary",
+        "displayName": "Refracted Light",
+        "canonical": "#b9c4ff",
+        "tonalRamp": ["oklch(15% 0.09 275)", "oklch(25% 0.09 275)", "oklch(35% 0.09 275)", "oklch(47% 0.09 275)", "oklch(59% 0.09 275)", "oklch(71% 0.09 275)", "oklch(83% 0.09 275)", "oklch(95% 0.09 275)"]
+      },
+      "frosted-white": {
+        "role": "neutral",
+        "displayName": "Frosted White",
+        "canonical": "#edf1ff",
+        "tonalRamp": ["oklch(15% 0.02 272)", "oklch(25% 0.02 272)", "oklch(35% 0.02 272)", "oklch(47% 0.02 272)", "oklch(59% 0.02 272)", "oklch(71% 0.02 272)", "oklch(83% 0.02 272)", "oklch(95% 0.02 272)"]
+      },
+      "distant-silver": {
+        "role": "neutral",
+        "displayName": "Distant Silver",
+        "canonical": "#9da8c2",
+        "tonalRamp": ["oklch(15% 0.045 268)", "oklch(25% 0.045 268)", "oklch(35% 0.045 268)", "oklch(47% 0.045 268)", "oklch(59% 0.045 268)", "oklch(71% 0.045 268)", "oklch(83% 0.045 268)", "oklch(95% 0.045 268)"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero statements only." },
+      "headline": { "displayName": "Headline", "purpose": "Section-defining commercial claims." },
+      "title": { "displayName": "Title", "purpose": "Program offers and conceptual server labels." },
+      "body": { "displayName": "Body", "purpose": "Readable outcome-focused explanation." },
+      "label": { "displayName": "Infrastructure Label", "purpose": "Short functional metadata only." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "state-fast", "value": "180ms ease", "purpose": "Hover, focus, and press feedback." },
+      { "name": "header-state", "value": "220ms ease", "purpose": "Scrolled header material transition." },
+      { "name": "reveal", "value": "760ms cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Section hierarchy reveal." },
+      { "name": "hero-enter", "value": "900ms cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Orchestrated first-load hero entrance." }
+    ],
+    "breakpoints": [
+      { "name": "mobile", "value": "767px" },
+      { "name": "compact-desktop", "value": "1100px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The single decisive conversion action used for contact.",
+      "html": "<button class=\"ds-btn-primary\">Discuss your network</button>",
+      "css": ".ds-btn-primary { min-height: 48px; padding: 13px 18px; border: 1px solid #c8d0ff; border-radius: 2px; background: var(--action-surface, #d7dcff); color: var(--action-ink, #101322); font: 600 13px 'Avenir Next', Avenir, sans-serif; transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease; } .ds-btn-primary:hover { background: #eff1ff; } .ds-btn-primary:focus-visible { outline: 2px solid var(--accent-soft, #b9c4ff); outline-offset: 4px; background: #eff1ff; } .ds-btn-primary:active { transform: translateY(1px); }"
+    },
+    {
+      "name": "Text Link",
+      "kind": "button",
+      "refersTo": "text-link",
+      "description": "A low-emphasis secondary path paired with a primary action.",
+      "html": "<a class=\"ds-text-link\" href=\"#\">See Mirage ↘</a>",
+      "css": ".ds-text-link { display: inline-flex; gap: 9px; padding: 10px 0; border-bottom: 1px solid rgba(191,210,255,.3); color: #c8cee0; font: 400 13px 'Avenir Next', Avenir, sans-serif; text-decoration: none; transition: color 180ms ease, border-color 180ms ease; } .ds-text-link:hover, .ds-text-link:focus-visible { border-color: var(--accent, #8d9bff); color: var(--text, #edf1ff); } .ds-text-link:focus-visible { outline: 2px solid var(--accent-soft, #b9c4ff); outline-offset: 4px; }"
+    },
+    {
+      "name": "Navigation Contact Action",
+      "kind": "nav",
+      "refersTo": "nav-cta",
+      "description": "A bordered contact action that stays visible in the desktop navigation.",
+      "html": "<a class=\"ds-nav-cta\" href=\"#\">Discuss your network</a>",
+      "css": ".ds-nav-cta { display: inline-flex; padding: 10px 14px; border: 1px solid rgba(191,210,255,.3); color: var(--text, #edf1ff); background: transparent; font: 400 13px 'Avenir Next', Avenir, sans-serif; text-decoration: none; transition: color 180ms ease, border-color 180ms ease; } .ds-nav-cta:hover { border-color: var(--accent, #8d9bff); color: #fff; } .ds-nav-cta:focus-visible { outline: 2px solid var(--accent-soft, #b9c4ff); outline-offset: 4px; } .ds-nav-cta:active { transform: translateY(1px); }"
+    },
+    {
+      "name": "Program Panel",
+      "kind": "card",
+      "refersTo": "program-panel",
+      "description": "A sharp asymmetric offer panel with tonal depth and no shadow.",
+      "html": "<article class=\"ds-program-panel\"><h3>Deployment</h3><p>Integration shaped around your network and infrastructure.</p></article>",
+      "css": ".ds-program-panel { min-height: 225px; padding: 32px; border: 1px solid rgba(191,210,255,.16); border-radius: 0; background: var(--surface, #0a0d17); color: var(--text, #edf1ff); } .ds-program-panel h3 { margin: 0; max-width: 15rem; font: 400 34px/1.05 'Bodoni 72', Didot, serif; letter-spacing: -.025em; text-wrap: balance; } .ds-program-panel p { max-width: 22rem; margin: 19px 0 0; color: var(--muted, #9da8c2); font: 400 14px/1.65 'Avenir Next', Avenir, sans-serif; }"
+    },
+    {
+      "name": "Server Node",
+      "kind": "custom",
+      "refersTo": "server-node",
+      "description": "A conceptual backend marker used only inside the continuity diagram.",
+      "html": "<div class=\"ds-server-node\"><span>World A</span><small>Backend</small></div>",
+      "css": ".ds-server-node { display: flex; min-height: 116px; padding: 16px; flex-direction: column; justify-content: space-between; border: 1px solid rgba(191,210,255,.3); background: #0c101c; color: var(--text, #edf1ff); } .ds-server-node span { font: 400 29px/1 'Bodoni 72', Didot, serif; } .ds-server-node small { color: #7e899f; font: 400 10px/1.2 SFMono-Regular, Consolas, monospace; letter-spacing: .12em; text-transform: uppercase; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Invisible Seam",
+    "overview": "Project Caligo should feel like a continuous world assembled from precise, separate pieces. Dark infrastructure recedes while crystalline periwinkle surfaces reveal only enough structure to build trust. The system is mysterious in atmosphere, direct in hierarchy, and commercially legible to experienced Minecraft network operators. The experience sells outcomes rather than internals. Large composed imagery and decisive statements carry the story; restrained diagrams may explain continuity at a conceptual level, but the page never becomes technical documentation. PaperMC is a reference for navigational clarity and useful grouping, not a visual template.",
+    "keyCharacteristics": [
+      "Midnight surfaces with one controlled periwinkle light source.",
+      "Faceted imagery that turns separation into perceived continuity.",
+      "High-contrast serif display type paired with quiet humanist sans-serif copy.",
+      "Sharp geometry, one-pixel boundaries, and almost no conventional elevation.",
+      "Spacious single-purpose sections with a clear route to contact.",
+      "Motion that reveals hierarchy without becoming spectacle."
+    ],
+    "rules": [
+      { "name": "The One Refraction Rule", "body": "Periwinkle is the only chromatic accent. Never introduce a competing hue for a new section, state, or CTA.", "section": "colors" },
+      { "name": "The Midnight Continuity Rule", "body": "Every public marketing section stays inside the midnight surface family. Depth comes from tonal steps, not theme switching.", "section": "colors" },
+      { "name": "The Outcome First Rule", "body": "Headlines describe the value buyers receive. Implementation terminology belongs in documentation, not display type.", "section": "typography" },
+      { "name": "The Serif Reserve Rule", "body": "Bodoni carries decisive statements, not paragraphs, controls, or metadata.", "section": "typography" },
+      { "name": "The Flat Infrastructure Rule", "body": "Surfaces have no drop shadow at rest. If a panel needs a wide blurred shadow to separate it, the hierarchy or tonal contrast is wrong.", "section": "elevation" },
+      { "name": "The Boundary Rule", "body": "Borders organize real structure. Decorative outlines and glow rings are forbidden.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do lead with continuity, scale, and player experience instead of technical implementation.",
+      "Do keep Mirage Periwinkle rare and meaningful across the entire page.",
+      "Do use large generated brand imagery where it communicates the invisible-seam metaphor.",
+      "Do borrow PaperMC's direct hierarchy and useful navigation while preserving Project Caligo's identity.",
+      "Do make the website form the primary conversion path, with contact@industrium.net and the Industrium Discord as clear alternatives.",
+      "Do meet WCAG 2.2 AA with keyboard access, visible focus, sufficient contrast, semantic markup, and reduced-motion behavior."
+    ],
+    "donts": [
+      "Don't use generic gamer-neon or cyberpunk styling.",
+      "Don't use blocky Minecraft fan-site aesthetics or novelty pixel-art presentation.",
+      "Don't use generic SaaS dashboards, interchangeable startup cards, or enterprise software templates.",
+      "Don't turn the marketing page into a technical architecture explanation.",
+      "Don't expose the Discord webhook in client-side HTML or JavaScript, and don't invent additional communication channels.",
+      "Don't repeat tiny uppercase tracked eyebrows above every section heading.",
+      "Don't use rounded cards, decorative glassmorphism, gradient text, or wide ambient card shadows.",
+      "Don't introduce a second accent hue or switch the page into a light theme mid-story."
+    ]
+  }
+}

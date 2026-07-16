@@ -10,6 +10,8 @@ npm run dev
 
 Then open `http://localhost:4173`.
 
+The local server includes the `/api/contact` endpoint. Copy `.env.example` to `.env.local` and set `DISCORD_WEBHOOK_URL` to test real delivery. `.env.local` is ignored by Git.
+
 ## Production build
 
 ```bash
@@ -29,6 +31,10 @@ The production-ready static site is generated in `dist/`. The build has no exter
 
 Vercel will serve the site as static files and apply the cache and security headers defined in `vercel.json`.
 
+### Contact form environment variable
+
+Add `DISCORD_WEBHOOK_URL` in **Project Settings > Environment Variables**. Enable it for Production and any Preview deployments where the form should work, then redeploy. Keep it server-side and mark it sensitive; never place the webhook URL in HTML, browser JavaScript, or `vercel.json`.
+
 ## Connect a custom domain
 
 1. Open the Vercel project and go to **Settings > Domains**.
@@ -39,6 +45,8 @@ Vercel will serve the site as static files and apply the cache and security head
 
 Vercel provisions and renews HTTPS automatically after the DNS records have propagated.
 
-## Before publishing
+## Public contact paths
 
-Replace the `contact@projectcaligo.com` email address in `index.html` if the public contact address is different.
+- Website form: `/api/contact`
+- Email: `contact@industrium.net`
+- Discord: `https://discord.gg/zKJRArY8fq`
