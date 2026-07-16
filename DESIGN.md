@@ -87,12 +87,13 @@ components:
 
 Project Caligo should feel like a continuous world assembled from precise, separate pieces. Dark infrastructure recedes while crystalline periwinkle surfaces reveal only enough structure to build trust. The system is mysterious in atmosphere, direct in hierarchy, and commercially legible to experienced Minecraft network operators.
 
-The experience sells outcomes rather than internals. Large composed imagery and decisive statements carry the story; restrained diagrams may explain continuity at a conceptual level, but the page never becomes technical documentation. PaperMC is a reference for navigational clarity and useful grouping, not a visual template.
+The experience sells outcomes rather than internals. One composed hero image establishes the metaphor. Decisive statements and handcrafted interface components carry the rest of the story without turning the page into technical documentation. PaperMC is a reference for navigational clarity and useful grouping, not a visual template.
 
 **Key Characteristics:**
 
 - Midnight surfaces with one controlled periwinkle light source.
-- Faceted imagery that turns separation into perceived continuity.
+- One decisive faceted hero image that turns separation into perceived continuity.
+- Text-led sections and handcrafted product components after the hero.
 - Direct, weight-driven sans-serif headlines paired with a serif Caligo wordmark.
 - Sharp geometry, one-pixel boundaries, and almost no conventional elevation.
 - Spacious single-purpose sections with a clear route to contact.
@@ -156,7 +157,7 @@ Motion behaves like refraction becoming legible: brief, directional, and tied to
 - **Timing:** `100-150ms` for press feedback, `180-240ms` for navigation and status changes, and `420-700ms` for authored entrances.
 - **Easing:** Exponential or quartic ease-out only. No bounce, elastic, spring, or looping decorative motion.
 - **Hero:** Copy settles by no more than `10px`; the world image resolves from a restrained scale and tonal shift; a single refracted seam crosses the image once.
-- **Continuity:** Three panorama panes resolve in order, followed by one light pass across the fixed server seams. The sequence does not loop.
+- **Continuity:** The player session resolves in three events, followed by one light pass across the continuous route. The sequence does not loop.
 - **Feedback:** The mobile menu moves as one surface, validation receives a short horizontal correction, and submitting uses a bounded progress line.
 - **Accessibility:** Content is visible without animation classes. `prefers-reduced-motion: reduce` reduces all animation and transition durations to effectively instant.
 
@@ -193,8 +194,12 @@ Components are sharp, restrained, and decisive. Corners are square or almost squ
 ### Continuity Diagram
 
 - **Purpose:** Explain one continuous player experience across separate backend worlds without exposing Mirage implementation details.
-- **Structure:** One continuous world panorama is physically divided into three server panes. A periwinkle route crosses both seams without breaking, while paired captions contrast the player experience with the infrastructure underneath.
-- **Mobile:** Preserve the horizontal journey, reduce the panorama height, and compact its metadata so the uninterrupted route remains immediately legible.
+- **Structure:** A handcrafted session interface pairs three player events with one uninterrupted route above three backend bands. Summary states describe only visible outcomes.
+- **Mobile:** Stack the event stream above the session view, preserve the horizontal route, and turn the summary into compact rows.
+
+### Imagery
+
+The generated Mirage world image belongs in the hero only. After the hero, explain the product through typography, precise rules, and handcrafted interface components. Do not repeat the hero image, add decorative stock imagery, or use image panels as section filler.
 
 ### Contact Form
 
@@ -213,7 +218,7 @@ The contact section uses a direct two-column composition: a benefit-led invitati
 
 - **Do** lead with continuity, scale, and player experience instead of technical implementation.
 - **Do** keep Mirage Periwinkle rare and meaningful across the entire page.
-- **Do** use large generated brand imagery where it communicates the invisible-seam metaphor.
+- **Do** reserve the generated brand image for the hero and use custom interface components afterwards.
 - **Do** borrow PaperMC's direct hierarchy and useful navigation while preserving Project Caligo's identity.
 - **Do** make the website form the primary conversion path, with `contact@industrium.net` and the Industrium Discord as clear alternatives.
 - **Do** meet WCAG 2.2 AA with keyboard access, visible focus, sufficient contrast, semantic markup, and reduced-motion behavior.

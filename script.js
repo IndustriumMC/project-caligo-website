@@ -50,7 +50,7 @@ if (header && headerSentinel && "IntersectionObserver" in window) {
   headerObserver.observe(headerSentinel);
 }
 
-const motionTargets = document.querySelectorAll(".continuity-demo, .journey-list, .about-mark");
+const motionTargets = document.querySelectorAll(".experience-console, .journey-list, .about-mark");
 if (!reducedMotion.matches && motionTargets.length && "IntersectionObserver" in window) {
   const motionObserver = new IntersectionObserver(
     (entries) => {

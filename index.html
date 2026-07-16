@@ -91,70 +91,72 @@
           </p>
         </div>
 
-        <div class="feature-grid">
-          <article class="feature feature-wide">
-            <div class="feature-visual continuity-demo" aria-hidden="true">
-              <div class="continuity-meta">
-                <span>Player experience</span>
-                <strong>One continuous world</strong>
-              </div>
-              <div class="continuity-panorama">
-                <div class="world-slice world-slice-a"><span>World A</span></div>
-                <div class="world-slice world-slice-b"><span>World B</span></div>
-                <div class="world-slice world-slice-c"><span>World C</span></div>
-                <div class="continuity-route">
-                  <span>Move</span>
-                  <i></i>
-                  <b></b>
-                  <em>Continue</em>
-                </div>
-              </div>
-              <div class="continuity-note">
-                <span>Server boundaries</span>
-                <strong>Invisible in play</strong>
-              </div>
-            </div>
-            <div class="feature-copy">
-              <h3>Transfers disappear into play</h3>
-              <p>Players move between backend servers without a visible disconnect or a conventional proxy handoff interrupting the moment.</p>
-            </div>
-          </article>
+        <div class="experience-console" aria-label="A Mirage player session moving continuously across server boundaries">
+          <div class="console-bar">
+            <span class="console-controls" aria-hidden="true"><i></i><i></i><i></i></span>
+            <strong>Mirage player session</strong>
+            <span class="console-live"><i aria-hidden="true"></i> Live experience</span>
+          </div>
 
-          <article class="feature">
-            <span class="feature-mark" aria-hidden="true">Capacity</span>
-            <h3>Grow without fragmenting the world</h3>
-            <p>Add room for new areas, systems, and players while the network continues to feel like one place.</p>
-          </article>
+          <div class="console-body">
+            <div class="event-stream">
+              <p class="console-label">What the player experiences</p>
+              <ol>
+                <li><span>Enter</span><div><strong>World joined</strong><small>The player begins in the world.</small></div></li>
+                <li><span>Cross</span><div><strong>Boundary passed</strong><small>Movement continues without a visible switch.</small></div></li>
+                <li><span>Play</span><div><strong>New area reached</strong><small>The same journey carries on.</small></div></li>
+              </ol>
+            </div>
 
-          <article class="feature feature-tint">
-            <span class="feature-mark" aria-hidden="true">Experience</span>
-            <h3>Protect the player's attention</h3>
-            <p>Keep infrastructure decisions behind the scenes so players stay focused on where they are going, not which server is carrying them.</p>
-          </article>
+            <div class="session-view">
+              <div class="session-state">
+                <span>Player view</span>
+                <strong>Continuous</strong>
+              </div>
+              <div class="session-route" aria-hidden="true">
+                <span></span><i></i><i></i><i></i><b></b>
+              </div>
+              <div class="server-bands" aria-hidden="true">
+                <span>Backend A</span><span>Backend B</span><span>Backend C</span>
+              </div>
+              <p>The infrastructure changes underneath. The player's attention does not.</p>
+            </div>
+          </div>
+
+          <div class="console-summary">
+            <div><span>Visible reconnects</span><strong>None</strong></div>
+            <div><span>Traditional switch</span><strong>Hidden</strong></div>
+            <div><span>Player journey</span><strong>Uninterrupted</strong></div>
+          </div>
+        </div>
+
+        <div class="mirage-principles">
+          <article><h3>Grow without fragmenting the world.</h3><p>Add room for new areas, systems, and players while the network continues to feel like one place.</p></article>
+          <article><h3>Protect the player's attention.</h3><p>Keep infrastructure decisions behind the scenes so players stay focused on where they are going.</p></article>
         </div>
       </section>
 
       <section class="benefit-section" id="benefits" aria-labelledby="benefits-title">
-        <div class="benefit-image">
-          <img
-            src="assets/caligo-wing.jpg"
-            width="1122"
-            height="1402"
-            alt="Faceted Caligo butterfly wing resolving into connected points"
-            loading="lazy"
-          />
+        <div class="benefit-heading">
+          <div><span class="section-tag">Built around the outcome</span><h2 id="benefits-title">More room for the network. One world for the player.</h2></div>
+          <p>Mirage is for networks that need to distribute their infrastructure without distributing the player's experience.</p>
         </div>
-        <div class="benefit-copy">
-          <span class="section-tag">Built around the outcome</span>
-          <h2 id="benefits-title">Give the network more room. Keep the world whole.</h2>
-          <p class="benefit-lede">
-            Mirage is designed for networks that have outgrown a single-server boundary but refuse to make scale feel like friction.
-          </p>
-          <ul class="benefit-list">
-            <li><strong>Move naturally</strong><span>Players cross backend boundaries without a traditional reconnect.</span></li>
-            <li><strong>Expand deliberately</strong><span>Grow capacity and world scope without presenting a collection of separate destinations.</span></li>
-            <li><strong>Operate with confidence</strong><span>Bring Mirage into production with deployment guidance, updates, and direct technical support.</span></li>
-          </ul>
+        <div class="benefit-perspectives">
+          <article>
+            <span>For players</span>
+            <h3>Keep moving.</h3>
+            <p>Cross backend boundaries without a traditional reconnect breaking the moment.</p>
+          </article>
+          <article>
+            <span>For operators</span>
+            <h3>Keep growing.</h3>
+            <p>Expand capacity and world scope without presenting separate destinations.</p>
+          </article>
+          <article>
+            <span>With Project Caligo</span>
+            <h3>Keep operating.</h3>
+            <p>Bring Mirage into production with deployment guidance, updates, and direct technical support.</p>
+          </article>
         </div>
       </section>
 
