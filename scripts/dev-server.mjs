@@ -52,7 +52,7 @@ const server = createServer(async (request, response) => {
   }
 
   const requestedPath = decodeURIComponent(url.pathname === "/" ? "/index.html" : url.pathname);
-  const filePath = resolve(root, `.${requestedPath}`);
+  let filePath = resolve(root, `.${requestedPath}`);
   if (filePath !== root && !filePath.startsWith(`${root}${sep}`)) {
     response.writeHead(403);
     response.end("Forbidden");
@@ -61,7 +61,12 @@ const server = createServer(async (request, response) => {
 
   try {
     await access(filePath);
-    const fileStats = await stat(filePath);
+    let fileStats = await stat(filePath);
+    if (fileStats.isDirectory()) {
+      filePath = resolve(filePath, "index.html");
+      await access(filePath);
+      fileStats = await stat(filePath);
+    }
     if (!fileStats.isFile()) throw new Error("Not a file");
     response.writeHead(200, {
       "Content-Type": mimeTypes[extname(filePath).toLowerCase()] || "application/octet-stream",

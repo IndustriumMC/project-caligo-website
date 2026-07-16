@@ -806,6 +806,25 @@ h2 {
   line-height: 1.5;
 }
 
+.form-note a,
+.legal-copy a,
+.legal-aside a {
+  color: var(--accent-soft);
+  text-decoration: underline;
+  text-decoration-color: rgba(185, 196, 255, 0.45);
+  text-underline-offset: 0.22em;
+}
+
+.form-note a:hover,
+.form-note a:focus-visible,
+.legal-copy a:hover,
+.legal-copy a:focus-visible,
+.legal-aside a:hover,
+.legal-aside a:focus-visible {
+  color: var(--text);
+  text-decoration-color: currentColor;
+}
+
 .form-status {
   min-height: 1.15rem;
   margin-top: 0.6rem;
@@ -845,6 +864,158 @@ h2 {
 .site-footer p:nth-child(2) {
   max-width: 24rem;
   line-height: 1.55;
+}
+
+.footer-meta {
+  display: grid;
+  justify-items: end;
+  gap: 0.8rem;
+}
+
+.footer-legal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.55rem 1rem;
+}
+
+.footer-legal a {
+  color: #a7b0c5;
+  transition: color 180ms ease;
+}
+
+.footer-legal a:hover,
+.footer-legal a:focus-visible {
+  color: var(--text);
+}
+
+.legal-page .site-header {
+  border-color: var(--line);
+  background: rgba(6, 8, 15, 0.92);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+}
+
+.legal-page .site-nav {
+  gap: 1rem;
+}
+
+.legal-shell {
+  width: var(--page);
+  min-height: calc(100dvh - 10rem);
+  margin: 0 auto;
+  padding: clamp(9rem, 15vw, 13rem) 0 clamp(6rem, 10vw, 10rem);
+}
+
+.legal-hero {
+  display: grid;
+  padding-bottom: clamp(4rem, 8vw, 7rem);
+  grid-template-columns: minmax(0, 1.35fr) minmax(220px, 0.65fr);
+  gap: clamp(3rem, 8vw, 10rem);
+  align-items: end;
+  border-bottom: 1px solid var(--line);
+}
+
+.legal-hero h1 {
+  max-width: 10ch;
+  font-size: clamp(4.4rem, 10vw, 9.5rem);
+  line-height: 0.84;
+}
+
+.legal-summary {
+  max-width: 34rem;
+  color: #bac3d7;
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+  line-height: 1.7;
+}
+
+.legal-updated {
+  display: block;
+  margin-top: 1.8rem;
+  color: #778198;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.legal-layout {
+  display: grid;
+  padding-top: clamp(4rem, 8vw, 7rem);
+  grid-template-columns: minmax(180px, 0.32fr) minmax(0, 0.68fr);
+  gap: clamp(3rem, 8vw, 10rem);
+}
+
+.legal-aside {
+  align-self: start;
+  color: #8590a7;
+  font-size: 0.76rem;
+  line-height: 1.65;
+}
+
+.legal-aside strong {
+  display: block;
+  margin-bottom: 0.8rem;
+  color: var(--accent-soft);
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.legal-aside p + p {
+  margin-top: 1.4rem;
+}
+
+.legal-copy {
+  max-width: 52rem;
+}
+
+.legal-copy section + section {
+  margin-top: clamp(3.5rem, 7vw, 6rem);
+}
+
+.legal-copy h2 {
+  margin-bottom: 1.25rem;
+  font-family: var(--sans);
+  font-size: clamp(1.45rem, 2vw, 2rem);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+}
+
+.legal-copy h3 {
+  margin: 2rem 0 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.legal-copy p,
+.legal-copy li,
+.legal-copy address {
+  color: #aab4ca;
+  font-size: 0.94rem;
+  font-style: normal;
+  line-height: 1.8;
+}
+
+.legal-copy p + p {
+  margin-top: 1rem;
+}
+
+.legal-copy ul {
+  padding-left: 1.2rem;
+  margin: 1.2rem 0 0;
+}
+
+.legal-copy li + li {
+  margin-top: 0.65rem;
+}
+
+.legal-note {
+  padding: 1.3rem 1.4rem;
+  border-left: 2px solid var(--accent);
+  background: rgba(141, 155, 255, 0.06);
 }
 
 .reveal {
@@ -1134,6 +1305,43 @@ h2 {
     align-items: flex-start;
     flex-direction: column;
     gap: 1.5rem;
+  }
+
+  .footer-meta {
+    justify-items: start;
+  }
+
+  .footer-legal {
+    justify-content: flex-start;
+  }
+
+  .legal-page .site-nav {
+    display: flex;
+    position: static;
+    padding: 0;
+    border: 0;
+    background: transparent;
+  }
+
+  .legal-page .nav-toggle {
+    display: none;
+  }
+
+  .legal-hero,
+  .legal-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .legal-hero {
+    gap: 2.5rem;
+  }
+
+  .legal-hero h1 {
+    font-size: clamp(4rem, 19vw, 6.5rem);
+  }
+
+  .legal-layout {
+    gap: 4rem;
   }
 }
 

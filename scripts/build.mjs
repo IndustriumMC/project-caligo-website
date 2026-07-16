@@ -3,6 +3,7 @@ import { cp, mkdir, rm } from "node:fs/promises";
 const outputDirectory = new URL("../dist/", import.meta.url);
 const projectDirectory = new URL("../", import.meta.url);
 const files = ["index.html", "styles.css", "script.js"];
+const directories = ["terms", "privacy", "legal", "cookies"];
 
 await rm(outputDirectory, { recursive: true, force: true });
 await mkdir(outputDirectory, { recursive: true });
@@ -10,6 +11,14 @@ await mkdir(outputDirectory, { recursive: true });
 await Promise.all(
   files.map((file) =>
     cp(new URL(file, projectDirectory), new URL(file, outputDirectory)),
+  ),
+);
+
+await Promise.all(
+  directories.map((directory) =>
+    cp(new URL(directory, projectDirectory), new URL(directory, outputDirectory), {
+      recursive: true,
+    }),
   ),
 );
 
