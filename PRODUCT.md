@@ -46,6 +46,16 @@ The first public Mirage demonstration is available at `https://youtu.be/6i3NGjgj
 
 Industrium is the Minecraft network where Mirage is developed and used. Project Caligo is the program that brings Mirage to other network operators. BENZOOgataga owns and currently operates Industrium, Project Caligo, and Mirage. Commercial agreements are currently made with BENZOOgataga.
 
+## AI Use and Engineering Ownership
+
+Project Caligo is operated by two people. BENZOOgataga is a systems engineer and infrastructure architect with systems, network administration, hosting, and operational experience. Lodjo is an experienced software developer. Together, they review network infrastructure, plan deployments, develop software, and operate Mirage.
+
+The public website, including its code, written content, layout implementation, and every image used on it, was created with AI tools under the team's direction and review. Web development is outside the team's principal field. The team defined the product facts, visual direction, requirements, and acceptance criteria, then reviewed and tested the output before publication.
+
+Mirage is human-engineered software. Its proprietary JAR contains thousands of lines authored and maintained directly by its developers. AI may assist the wider project with secondary or repetitive work such as documentation drafts, large setup sequences, structured configuration, research organisation, and presentation. Every output is verified, and responsibility remains with the team.
+
+The public AI use page is linked from the website footer only. It should remain calm, factual, and accountable instead of becoming a primary sales message.
+
 ## Naming Story
 
 Caligo carries two meanings that fit Mirage.
