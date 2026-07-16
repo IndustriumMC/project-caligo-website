@@ -33,6 +33,11 @@ nav?.querySelectorAll("a").forEach((link) => {
   link.addEventListener("click", closeNavigation);
 });
 
+const mobileNavigation = window.matchMedia("(max-width: 820px)");
+mobileNavigation.addEventListener?.("change", (event) => {
+  if (!event.matches) closeNavigation();
+});
+
 const headerSentinel = document.querySelector(".header-sentinel");
 
 if (header && headerSentinel && "IntersectionObserver" in window) {
@@ -40,6 +45,32 @@ if (header && headerSentinel && "IntersectionObserver" in window) {
     header.classList.toggle("is-scrolled", !entry.isIntersecting && entry.boundingClientRect.top < 0);
   });
   headerObserver.observe(headerSentinel);
+}
+
+const sectionLinks = [...(nav?.querySelectorAll("a[href^='#']") ?? [])];
+const sectionLinkById = new Map(sectionLinks.map((link) => [link.getAttribute("href")?.slice(1), link]));
+const trackedSections = [...sectionLinkById.keys()]
+  .map((id) => document.getElementById(id))
+  .filter(Boolean);
+
+if (trackedSections.length) {
+  let sectionUpdateFrame = 0;
+  const updateCurrentSection = () => {
+    sectionUpdateFrame = 0;
+    const marker = Math.max(96, window.innerHeight * 0.34);
+    const current = trackedSections.find((section) => {
+      const bounds = section.getBoundingClientRect();
+      return bounds.top <= marker && bounds.bottom > marker;
+    });
+    sectionLinks.forEach((link) => link.removeAttribute("aria-current"));
+    if (current) sectionLinkById.get(current.id)?.setAttribute("aria-current", "location");
+  };
+  const scheduleSectionUpdate = () => {
+    if (!sectionUpdateFrame) sectionUpdateFrame = window.requestAnimationFrame(updateCurrentSection);
+  };
+  window.addEventListener("scroll", scheduleSectionUpdate, { passive: true });
+  window.addEventListener("resize", scheduleSectionUpdate);
+  scheduleSectionUpdate();
 }
 
 const year = document.querySelector("[data-year]");
