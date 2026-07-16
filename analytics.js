@@ -9,7 +9,7 @@ if (window.location.protocol === "https:" && !localHosts.has(window.location.hos
 
   window.va("beforeSend", (event) => {
     try {
-      const url = new URL(event.url);
+      const url = new URL(event.url, window.location.origin);
       url.search = "";
       url.hash = "";
       return { ...event, url: url.toString() };
