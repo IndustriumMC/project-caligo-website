@@ -1220,6 +1220,66 @@ li {
   line-height: 1.8;
 }
 
+.name-meanings {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 2.4rem;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.name-meanings article {
+  padding: 1.6rem 1.8rem 1.8rem 0;
+}
+
+.name-meanings article + article {
+  padding-right: 0;
+  padding-left: 1.8rem;
+  border-left: 1px solid var(--line);
+}
+
+.name-meanings span,
+.naming-pair strong {
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.name-meanings p {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.naming-pair {
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr;
+  margin-top: 1.8rem;
+}
+
+.naming-pair p {
+  display: flex;
+  margin: 0;
+  flex-direction: column;
+  gap: 0.45rem;
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+
+.naming-pair p + p {
+  padding-left: 1.8rem;
+  border-left: 1px solid var(--line);
+}
+
+.naming-pair span {
+  color: var(--accent-soft);
+}
+
+.about-copy .about-origin {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+
 .contact-section {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(420px, 1.1fr);
@@ -2042,6 +2102,24 @@ li {
 
   .about-mark {
     min-height: 220px;
+  }
+
+  .name-meanings,
+  .naming-pair {
+    grid-template-columns: 1fr;
+  }
+
+  .name-meanings article,
+  .name-meanings article + article,
+  .naming-pair p,
+  .naming-pair p + p {
+    padding: 1.3rem 0;
+    border-left: 0;
+  }
+
+  .name-meanings article + article,
+  .naming-pair p + p {
+    border-top: 1px solid var(--line);
   }
 
   .contact-form {

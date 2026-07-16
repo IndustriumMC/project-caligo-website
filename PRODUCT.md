@@ -44,6 +44,18 @@ The first public Mirage demonstration is available at `https://youtu.be/6i3NGjgj
 
 Industrium is the Minecraft network where Mirage is developed and used. Project Caligo is the program that brings Mirage to other network operators. BENZOOgataga owns and currently operates Industrium, Project Caligo, and Mirage. Commercial agreements are currently made with BENZOOgataga.
 
+## Naming Story
+
+Caligo carries two meanings that fit Mirage.
+
+Caligo is a genus of owl butterflies known for large eye-like patterns on their wings. Those markings change how the butterfly is perceived. The metaphor matches Mirage because the infrastructure remains separated across servers while the player perceives one continuous world. The two separated wings can represent separate servers, while their complete symmetrical form represents one unified world.
+
+The Latin word caligo means darkness, mist, obscurity, or dimness of sight. It suggests something real being concealed behind a visual veil. This connects to Mirage hiding server boundaries and infrastructure complexity from players.
+
+The naming logic is concise. Mirage hides the boundary. Caligo represents the illusion that hides it. Mirage is the technology. Project Caligo is the program that controls, distributes, supports, and commercializes it.
+
+The preferred public explanation is: Project Caligo takes its name from the Caligo owl butterfly and the Latin word for mist or obscurity. Like the patterns on its wings, Mirage changes what the observer perceives, concealing the boundaries between separate Minecraft servers and presenting them as one continuous world.
+
 ## Brand Personality
 
 Precise, ambitious, and technically confident. The experience should combine Project Caligo's current dark, faceted visual identity with the clarity and navigational usefulness of PaperMC. It should create excitement about what Minecraft networks may become without buzzwords, inflated exclusivity, or unsupported hype.
