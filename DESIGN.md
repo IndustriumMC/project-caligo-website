@@ -156,7 +156,7 @@ Motion behaves like refraction becoming legible: brief, directional, and tied to
 - **Timing:** `100-150ms` for press feedback, `180-240ms` for navigation and status changes, and `420-700ms` for authored entrances.
 - **Easing:** Exponential or quartic ease-out only. No bounce, elastic, spring, or looping decorative motion.
 - **Hero:** Copy settles by no more than `10px`; the world image resolves from a restrained scale and tonal shift; a single refracted seam crosses the image once.
-- **Continuity:** Nodes and paths resolve in order, followed by one light pass across the backend boundaries. The sequence does not loop.
+- **Continuity:** Three panorama panes resolve in order, followed by one light pass across the fixed server seams. The sequence does not loop.
 - **Feedback:** The mobile menu moves as one surface, validation receives a short horizontal correction, and submitting uses a bounded progress line.
 - **Accessibility:** Content is visible without animation classes. `prefers-reduced-motion: reduce` reduces all animation and transition durations to effectively instant.
 
@@ -193,8 +193,8 @@ Components are sharp, restrained, and decisive. Corners are square or almost squ
 ### Continuity Diagram
 
 - **Purpose:** Explain one continuous player experience across separate backend worlds without exposing Mirage implementation details.
-- **Structure:** Three sharp server nodes connected by one periwinkle path inside a single tonal container.
-- **Mobile:** Collapse vertically and rotate the continuity path from horizontal to vertical.
+- **Structure:** One continuous world panorama is physically divided into three server panes. A periwinkle route crosses both seams without breaking, while paired captions contrast the player experience with the infrastructure underneath.
+- **Mobile:** Preserve the horizontal journey, reduce the panorama height, and compact its metadata so the uninterrupted route remains immediately legible.
 
 ### Contact Form
 
