@@ -2,7 +2,7 @@ import { cp, mkdir, rm } from "node:fs/promises";
 
 const outputDirectory = new URL("../dist/", import.meta.url);
 const projectDirectory = new URL("../", import.meta.url);
-const files = ["index.html", "styles.css", "script.js"];
+const files = ["index.html", "styles.css", "script.js", "analytics.js"];
 const directories = ["terms", "privacy", "legal", "cookies"];
 
 await rm(outputDirectory, { recursive: true, force: true });
