@@ -56,6 +56,8 @@ Mirage is human-engineered software. Its proprietary JAR contains thousands of l
 
 The public AI use page is linked from the website footer only. It should remain calm, factual, and accountable instead of becoming a primary sales message.
 
+The public Project Caligo story page is also linked from the website footer only. It explains the origin of Mirage inside Industrium, the relationship between Mirage and Project Caligo, the Caligo name, present capabilities, network fit, the people behind the work, and one continuous future direction without a public ETA.
+
 ## Naming Story
 
 Caligo carries two meanings that fit Mirage.
