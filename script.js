@@ -1,5 +1,8 @@
 document.documentElement.classList.add("js");
 
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+if (!reducedMotion.matches) document.documentElement.classList.add("motion-ready");
+
 const header = document.querySelector("[data-header]");
 const navToggle = document.querySelector(".nav-toggle");
 const nav = document.querySelector(".site-nav");
@@ -45,6 +48,21 @@ if (header && headerSentinel && "IntersectionObserver" in window) {
     header.classList.toggle("is-scrolled", !entry.isIntersecting && entry.boundingClientRect.top < 0);
   });
   headerObserver.observe(headerSentinel);
+}
+
+const motionTargets = document.querySelectorAll(".continuity-demo, .journey-list, .about-mark");
+if (!reducedMotion.matches && motionTargets.length && "IntersectionObserver" in window) {
+  const motionObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-in-view");
+        motionObserver.unobserve(entry.target);
+      });
+    },
+    { rootMargin: "0px 0px -12%", threshold: 0.28 },
+  );
+  motionTargets.forEach((target) => motionObserver.observe(target));
 }
 
 const sectionLinks = [...(nav?.querySelectorAll("a[href^='#']") ?? [])];
@@ -95,6 +113,28 @@ if (contactForm) {
     if (!status) return;
     status.textContent = message;
     status.dataset.state = state;
+    if (!reducedMotion.matches && message && status.animate) {
+      status.animate(
+        [
+          { opacity: 0.55, transform: "translateY(4px)" },
+          { opacity: 1, transform: "translateY(0)" },
+        ],
+        { duration: 220, easing: "cubic-bezier(0.25, 1, 0.5, 1)" },
+      );
+    }
+  };
+
+  const animateInvalidField = () => {
+    if (reducedMotion.matches || !emailField?.animate) return;
+    emailField.animate(
+      [
+        { transform: "translateX(0)" },
+        { transform: "translateX(-4px)" },
+        { transform: "translateX(4px)" },
+        { transform: "translateX(0)" },
+      ],
+      { duration: 220, easing: "cubic-bezier(0.25, 1, 0.5, 1)" },
+    );
   };
 
   const setSubmitting = (isSubmitting) => {
@@ -115,6 +155,14 @@ if (contactForm) {
     return isValid;
   };
 
+  emailField?.addEventListener("invalid", (event) => {
+    event.preventDefault();
+    validateEmail();
+    setStatus("Enter a valid email address so we know where to reply.", "error");
+    animateInvalidField();
+    emailField.focus();
+  });
+
   emailField?.addEventListener("blur", validateEmail);
   emailField?.addEventListener("input", () => {
     if (emailWrapper?.classList.contains("has-error")) validateEmail();
@@ -134,6 +182,7 @@ if (contactForm) {
 
     if (!validateEmail()) {
       setStatus("Enter a valid email address so we know where to reply.", "error");
+      animateInvalidField();
       emailField?.focus();
       return;
     }

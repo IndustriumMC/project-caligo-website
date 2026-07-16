@@ -149,6 +149,19 @@ The system is flat and optically layered. It uses near-black tonal shifts, one-p
 
 **The Boundary Rule.** Borders organize real structure. Decorative outlines and glow rings are forbidden.
 
+## Motion
+
+Motion behaves like refraction becoming legible: brief, directional, and tied to continuity or state. The page uses one composed hero entrance, then reserves scroll-triggered choreography for the continuity diagram, the real three-stage journey, and the Caligo wings.
+
+- **Timing:** `100-150ms` for press feedback, `180-240ms` for navigation and status changes, and `420-700ms` for authored entrances.
+- **Easing:** Exponential or quartic ease-out only. No bounce, elastic, spring, or looping decorative motion.
+- **Hero:** Copy settles by no more than `10px`; the world image resolves from a restrained scale and tonal shift; a single refracted seam crosses the image once.
+- **Continuity:** Nodes and paths resolve in order, followed by one light pass across the backend boundaries. The sequence does not loop.
+- **Feedback:** The mobile menu moves as one surface, validation receives a short horizontal correction, and submitting uses a bounded progress line.
+- **Accessibility:** Content is visible without animation classes. `prefers-reduced-motion: reduce` reduces all animation and transition durations to effectively instant.
+
+**The One Choreography Rule.** Never apply the same fade-and-rise reveal to every section. Motion must explain a relationship, communicate state, or embody the invisible-seam metaphor.
+
 ## Components
 
 Components are sharp, restrained, and decisive. Corners are square or almost square; interaction comes from contrast, precise borders, and short movement rather than softness.
@@ -174,7 +187,7 @@ Components are sharp, restrained, and decisive. Corners are square or almost squ
 
 - **Desktop:** A single 72px line with the Project Caligo lockup, four direct product anchors, and one bordered contact action.
 - **Scrolled:** Midnight Infrastructure at high opacity with a restrained blur and Quiet Line below.
-- **Mobile:** A 64px bar and a 42px square toggle. The expanded menu becomes a full-width vertical surface beneath the header.
+- **Mobile:** A 64px bar and a 44px square toggle. The expanded menu becomes a full-width vertical surface beneath the header.
 - **States:** Links brighten from Distant Silver to Frosted White. Focus is always visible.
 
 ### Continuity Diagram

@@ -36,6 +36,8 @@
   --page: min(92vw, 1180px);
   --header-height: 72px;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
   --z-header: 20;
 }
 
@@ -191,6 +193,7 @@ li {
 }
 
 .site-nav a {
+  position: relative;
   display: inline-flex;
   min-height: 44px;
   align-items: center;
@@ -207,8 +210,24 @@ li {
   color: var(--text);
 }
 
-.site-nav a[aria-current="location"]:not(.nav-cta) {
-  box-shadow: inset 0 -1px 0 var(--accent);
+.site-nav a:not(.nav-cta)::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  content: "";
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 240ms var(--ease-out-quart);
+}
+
+.site-nav a[aria-current="location"]:not(.nav-cta)::after,
+.site-nav a:not(.nav-cta):hover::after,
+.site-nav a:not(.nav-cta):focus-visible::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 .site-nav .nav-cta[aria-current="location"] {
@@ -367,6 +386,7 @@ li {
   position: relative;
   min-width: 0;
   isolation: isolate;
+  overflow: hidden;
 }
 
 .hero-visual::before {
@@ -375,6 +395,19 @@ li {
   z-index: -1;
   content: "";
   background: var(--visual-glow);
+}
+
+.hero-visual::after {
+  position: absolute;
+  top: -12%;
+  bottom: -12%;
+  left: 50%;
+  width: 1px;
+  content: "";
+  background: linear-gradient(transparent, var(--accent-soft) 22%, var(--text) 50%, var(--accent-soft) 78%, transparent);
+  opacity: 0;
+  transform: translateX(-12rem) rotate(8deg);
+  pointer-events: none;
 }
 
 .hero-visual img {
@@ -420,6 +453,57 @@ li {
   border-radius: 50%;
   background: var(--accent);
   box-shadow: 0 0 0 4px var(--accent-wash-strong);
+}
+
+.motion-ready .hero-copy > * {
+  animation: hero-copy-settle 560ms var(--ease) both;
+}
+
+.motion-ready .hero-copy > :nth-child(2) { animation-delay: 50ms; }
+.motion-ready .hero-copy > :nth-child(3) { animation-delay: 95ms; }
+.motion-ready .hero-copy > :nth-child(4) { animation-delay: 140ms; }
+
+.motion-ready .hero-visual img {
+  animation: hero-image-resolve 700ms var(--ease) both;
+}
+
+.motion-ready .hero-visual::after {
+  animation: hero-seam-pass 680ms 80ms var(--ease-out-quint) both;
+}
+
+.motion-ready .world-status {
+  animation: status-settle 500ms 200ms var(--ease) both;
+}
+
+.motion-ready .world-status i {
+  animation: status-signal 680ms 620ms var(--ease-out-quart) 2;
+}
+
+@keyframes hero-copy-settle {
+  from { transform: translateY(10px); filter: blur(1px); }
+  to { transform: translateY(0); filter: blur(0); }
+}
+
+@keyframes hero-image-resolve {
+  from { transform: scale(1.025); filter: brightness(0.78) saturate(0.72); }
+  to { transform: scale(1); filter: brightness(1) saturate(1); }
+}
+
+@keyframes hero-seam-pass {
+  0% { opacity: 0; transform: translateX(-12rem) rotate(8deg); }
+  18% { opacity: 0.9; }
+  82% { opacity: 0.75; }
+  100% { opacity: 0; transform: translateX(12rem) rotate(8deg); }
+}
+
+@keyframes status-settle {
+  from { transform: translateY(8px); filter: brightness(0.82); }
+  to { transform: translateY(0); filter: brightness(1); }
+}
+
+@keyframes status-signal {
+  0%, 100% { box-shadow: 0 0 0 4px var(--accent-wash-strong); }
+  50% { box-shadow: 0 0 0 9px transparent; }
 }
 
 .world-status strong {
@@ -589,20 +673,37 @@ li {
 
 .demo-path {
   position: relative;
+  overflow: hidden;
   height: 1px;
   background: var(--accent);
+  transform-origin: left;
 }
 
 .demo-path i {
   position: absolute;
-  top: 50%;
+  top: 0;
   left: 0;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--accent-soft);
-  transform: translate(-50%, -50%);
-  animation: travel 3.2s var(--ease) infinite;
+  width: 38%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--text) 58%, transparent);
+}
+
+.continuity-demo.is-in-view .demo-world {
+  animation: node-resolve 460ms var(--ease-out-quart) both;
+}
+
+.continuity-demo.is-in-view .demo-world:nth-of-type(3) { animation-delay: 110ms; }
+.continuity-demo.is-in-view .demo-world:nth-of-type(5) { animation-delay: 220ms; }
+
+.continuity-demo.is-in-view .demo-path {
+  animation: path-resolve 520ms var(--ease-out-quart) both;
+}
+
+.continuity-demo.is-in-view .demo-path:nth-of-type(2) { animation-delay: 80ms; }
+.continuity-demo.is-in-view .demo-path:nth-of-type(4) { animation-delay: 190ms; }
+
+.continuity-demo.is-in-view .demo-path i {
+  animation: travel 1.45s 260ms var(--ease) 1 both;
 }
 
 .continuity-demo small {
@@ -619,10 +720,20 @@ li {
 }
 
 @keyframes travel {
-  0% { left: 0; opacity: 0; }
+  0% { transform: translateX(-110%); opacity: 0; }
   12% { opacity: 1; }
   88% { opacity: 1; }
-  100% { left: 100%; opacity: 0; }
+  100% { transform: translateX(270%); opacity: 0; }
+}
+
+@keyframes node-resolve {
+  from { transform: scale(0.94); border-color: var(--line); }
+  to { transform: scale(1); border-color: var(--line-strong); }
+}
+
+@keyframes path-resolve {
+  from { transform: scaleX(0.2); opacity: 0.45; }
+  to { transform: scaleX(1); opacity: 1; }
 }
 
 .benefit-section {
@@ -802,6 +913,30 @@ li {
   margin-top: 4.5rem;
 }
 
+.journey-list.is-in-view li::before {
+  animation: stage-line-resolve 420ms var(--ease-out-quart) both;
+}
+
+.journey-list.is-in-view li > div {
+  animation: stage-copy-settle 520ms var(--ease) both;
+}
+
+.journey-list.is-in-view li:nth-child(2)::before,
+.journey-list.is-in-view li:nth-child(2) > div { animation-delay: 90ms; }
+
+.journey-list.is-in-view li:nth-child(3)::before,
+.journey-list.is-in-view li:nth-child(3) > div { animation-delay: 180ms; }
+
+@keyframes stage-line-resolve {
+  from { transform: scaleX(0.15); transform-origin: left; }
+  to { transform: scaleX(1); transform-origin: left; }
+}
+
+@keyframes stage-copy-settle {
+  from { transform: translateY(8px); }
+  to { transform: translateY(0); }
+}
+
 .journey-list h3 {
   font-size: 1.45rem;
   font-weight: 600;
@@ -852,6 +987,24 @@ li {
 
 .about-mark span:first-child {
   transform: scaleX(-1);
+}
+
+.about-mark.is-in-view span:first-child {
+  animation: wing-left-resolve 620ms var(--ease) both;
+}
+
+.about-mark.is-in-view span:last-child {
+  animation: wing-right-resolve 620ms 80ms var(--ease) both;
+}
+
+@keyframes wing-left-resolve {
+  from { transform: translateX(12px) scaleX(-0.9); filter: brightness(0.72); }
+  to { transform: translateX(0) scaleX(-1); filter: brightness(1); }
+}
+
+@keyframes wing-right-resolve {
+  from { transform: translateX(-12px) scaleX(0.9); filter: brightness(0.72); }
+  to { transform: translateX(0) scaleX(1); filter: brightness(1); }
 }
 
 .about-copy p {
@@ -986,6 +1139,8 @@ li {
 
 .contact-submit {
   display: flex;
+  position: relative;
+  overflow: hidden;
   width: 100%;
   min-height: 58px;
   margin-top: 2rem;
@@ -1000,6 +1155,27 @@ li {
   font-weight: 650;
   cursor: pointer;
   transition: background-color 180ms ease, transform 160ms ease;
+}
+
+.contact-submit::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  content: "";
+  background: var(--accent);
+  transform: translateX(-105%);
+  pointer-events: none;
+}
+
+.contact-form.is-submitting .contact-submit::after {
+  animation: submit-progress 900ms var(--ease-out-quart) infinite;
+}
+
+@keyframes submit-progress {
+  from { transform: translateX(-105%); }
+  to { transform: translateX(105%); }
 }
 
 .contact-submit:hover,
@@ -1331,7 +1507,7 @@ li {
     padding: 0 1rem;
   }
 
-  .nav-toggle {
+  .js .nav-toggle {
     display: block;
   }
 
@@ -1348,7 +1524,7 @@ li {
     top: var(--header-height);
     right: 0;
     left: 0;
-    display: none;
+    display: flex;
     padding: 1rem;
     align-items: stretch;
     flex-direction: column;
@@ -1357,8 +1533,23 @@ li {
     background: var(--header-solid);
   }
 
-  .site-nav.is-open {
-    display: flex;
+  .js .site-nav {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-8px);
+    pointer-events: none;
+    transition:
+      opacity 180ms var(--ease-out-quart),
+      transform 220ms var(--ease-out-quart),
+      visibility 0s linear 220ms;
+  }
+
+  .js .site-nav.is-open {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    transition-delay: 0s;
   }
 
   .site-nav a {
@@ -1385,6 +1576,14 @@ li {
     gap: 1rem;
     border: 0;
     background: transparent;
+  }
+
+  .js .legal-page .site-nav {
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+    transition: none;
   }
 
   .legal-page .site-nav a {
