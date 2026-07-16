@@ -20,6 +20,8 @@ The website should present these outcomes clearly without exposing implementatio
 
 The form is the primary contact path. Existing secondary paths remain available: `contact@industrium.net` and the Industrium Discord server at `https://industrium.net/caligo`. The website should not introduce new communication channels.
 
+People who want to support continued work on Mirage and Project Caligo can use the official Patreon page at `https://www.patreon.com/c/BENZOOgataga`. Patreon is a support path, not a replacement for the website form, email, or Discord contact paths.
+
 ## Commercial Model
 
 Every Mirage agreement is negotiated with the team. Monthly and yearly licences are available depending on the network, resources, proxy count, backend count, deployment, hosting, and support needs. Lifetime licences are not offered. Source code and distributable JAR files are not sold or provided.
