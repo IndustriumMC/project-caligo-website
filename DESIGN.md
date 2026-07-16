@@ -12,26 +12,28 @@ colors:
   action-surface: "#d7dcff"
   action-surface-hover: "#eff1ff"
   action-ink: "#101322"
+  error-soft: "#ffb6bf"
+  error-strong: "#ff8f9d"
   quiet-line: "#bfd2ff29"
   assertive-line: "#bfd2ff4d"
 typography:
   display:
-    fontFamily: "Bodoni 72, Didot, Times New Roman, serif"
-    fontSize: "clamp(4rem, 6.2vw, 7.2rem)"
-    fontWeight: 400
-    lineHeight: 0.9
-    letterSpacing: "-0.04em"
-  headline:
-    fontFamily: "Bodoni 72, Didot, Times New Roman, serif"
-    fontSize: "clamp(3rem, 5.2vw, 6.2rem)"
-    fontWeight: 400
+    fontFamily: "Avenir Next, Avenir, Helvetica Neue, Arial, sans-serif"
+    fontSize: "clamp(3.7rem, 6.8vw, 6rem)"
+    fontWeight: 650
     lineHeight: 0.96
     letterSpacing: "-0.04em"
+  headline:
+    fontFamily: "Avenir Next, Avenir, Helvetica Neue, Arial, sans-serif"
+    fontSize: "clamp(2.6rem, 5vw, 4.6rem)"
+    fontWeight: 600
+    lineHeight: 1
+    letterSpacing: "-0.04em"
   title:
-    fontFamily: "Bodoni 72, Didot, Times New Roman, serif"
-    fontSize: "clamp(1.6rem, 2.4vw, 2.5rem)"
-    fontWeight: 400
-    lineHeight: 1.05
+    fontFamily: "Avenir Next, Avenir, Helvetica Neue, Arial, sans-serif"
+    fontSize: "clamp(1.4rem, 2.3vw, 2rem)"
+    fontWeight: 600
+    lineHeight: 1.15
     letterSpacing: "-0.025em"
   body:
     fontFamily: "Avenir Next, Avenir, Helvetica Neue, Arial, sans-serif"
@@ -39,11 +41,11 @@ typography:
     fontWeight: 400
     lineHeight: 1.65
   label:
-    fontFamily: "SFMono-Regular, Consolas, Liberation Mono, monospace"
-    fontSize: "0.69rem"
-    fontWeight: 400
-    lineHeight: 1.2
-    letterSpacing: "0.19em"
+    fontFamily: "Avenir Next, Avenir, Helvetica Neue, Arial, sans-serif"
+    fontSize: "0.8rem"
+    fontWeight: 650
+    lineHeight: 1.4
+    letterSpacing: "0"
 rounded:
   square: "0px"
   precise: "2px"
@@ -91,7 +93,7 @@ The experience sells outcomes rather than internals. Large composed imagery and 
 
 - Midnight surfaces with one controlled periwinkle light source.
 - Faceted imagery that turns separation into perceived continuity.
-- High-contrast serif display type paired with quiet humanist sans-serif copy.
+- Direct, weight-driven sans-serif headlines paired with a serif Caligo wordmark.
 - Sharp geometry, one-pixel boundaries, and almost no conventional elevation.
 - Spacious single-purpose sections with a clear route to contact.
 - Motion that reveals hierarchy without becoming spectacle.
@@ -121,24 +123,23 @@ The palette behaves like light moving through smoked glass: near-black structure
 
 ## Typography
 
-**Display Font:** Bodoni 72 with Didot and Times New Roman fallbacks
-
-**Body Font:** Avenir Next with Avenir, Helvetica Neue, and Arial fallbacks
+**Display and Body Font:** Avenir Next with Avenir, Helvetica Neue, and Arial fallbacks
+**Wordmark Font:** Bodoni 72 with Didot and Times New Roman fallbacks
 **Label/Mono Font:** SFMono-Regular with Consolas and Liberation Mono fallbacks
 
-**Character:** The high-contrast serif provides the butterfly's elegance and illusion; the humanist sans keeps commercial claims readable and credible. Monospace is reserved for short infrastructure labels where it carries real semantic meaning.
+**Character:** Weight-driven sans-serif headings make the offer immediate and product-led. The serif is reserved for the Caligo wordmark, preserving the butterfly's elegance without making the whole site feel editorial. Monospace is reserved for short infrastructure labels where it carries real semantic meaning.
 
 ### Hierarchy
 
-- **Display** (400, `clamp(4rem, 6.2vw, 7.2rem)`, 0.9): Hero statements only. Keep desktop hero copy to two balanced lines.
-- **Headline** (400, `clamp(3rem, 5.2vw, 6.2rem)`, 0.96): Section-defining statements with no more than one primary idea.
-- **Title** (400, `clamp(1.6rem, 2.4vw, 2.5rem)`, 1.05): Program offers, server-world labels, and grouped content.
+- **Display** (650, `clamp(3.7rem, 6.8vw, 6rem)`, 0.96): Hero statements only. Keep desktop hero copy to two balanced lines.
+- **Headline** (600, `clamp(2.6rem, 5vw, 4.6rem)`, 1): Section-defining statements with no more than one primary idea.
+- **Title** (600, `clamp(1.4rem, 2.3vw, 2rem)`, 1.15): Program offers, server-world labels, and grouped content.
 - **Body** (400, `1rem`, 1.65-1.75): Outcome-focused explanation with a maximum line length of 65-75 characters.
-- **Label** (400, `0.62rem-0.7rem`, `0.12em-0.19em`, uppercase): Short functional labels only, never a repeated eyebrow above every section.
+- **Label** (650, `0.8rem`, normal tracking): Plain-language section identifiers. Monospace uppercase remains limited to the hero product descriptor and infrastructure status.
 
 **The Outcome First Rule.** Headlines describe the value buyers receive. Implementation terminology belongs in documentation, not display type.
 
-**The Serif Reserve Rule.** Bodoni carries decisive statements, not paragraphs, controls, or metadata.
+**The Serif Reserve Rule.** Bodoni belongs to the Caligo wordmark and rare identity moments, not product headlines, paragraphs, controls, or metadata.
 
 ## Elevation
 
@@ -171,7 +172,7 @@ Components are sharp, restrained, and decisive. Corners are square or almost squ
 
 ### Navigation
 
-- **Desktop:** A single 72px line with the Project Caligo lockup, three direct anchors, and one bordered contact action.
+- **Desktop:** A single 72px line with the Project Caligo lockup, four direct product anchors, and one bordered contact action.
 - **Scrolled:** Midnight Infrastructure at high opacity with a restrained blur and Quiet Line below.
 - **Mobile:** A 64px bar and a 42px square toggle. The expanded menu becomes a full-width vertical surface beneath the header.
 - **States:** Links brighten from Distant Silver to Frosted White. Focus is always visible.
@@ -184,7 +185,7 @@ Components are sharp, restrained, and decisive. Corners are square or almost squ
 
 ### Contact Form
 
-The contact section uses the approved split editorial composition: a benefit-led invitation and three-step expectation ledger on the left, with one integrated ruled form on the right. On tablet and mobile it becomes a single continuous column.
+The contact section uses a direct two-column composition: a benefit-led invitation with email and Discord alternatives on the left, and one integrated ruled form on the right. On tablet and mobile it becomes a single continuous column.
 
 - **Fields:** Persistent mono labels, Frosted White input text, accessible Distant Silver helper text, and a precise two-pixel Periwinkle focus rule.
 - **Required data:** Email only. Network name and message are explicitly marked optional.

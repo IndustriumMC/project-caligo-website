@@ -3,8 +3,6 @@ document.documentElement.classList.add("js");
 const header = document.querySelector("[data-header]");
 const navToggle = document.querySelector(".nav-toggle");
 const nav = document.querySelector(".site-nav");
-const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
 const closeNavigation = () => {
   navToggle?.setAttribute("aria-expanded", "false");
   navToggle?.setAttribute("aria-label", "Open navigation");
@@ -44,25 +42,6 @@ if (header && headerSentinel && "IntersectionObserver" in window) {
   headerObserver.observe(headerSentinel);
 }
 
-const revealElements = document.querySelectorAll(".reveal");
-
-if (reduceMotion || !("IntersectionObserver" in window)) {
-  revealElements.forEach((element) => element.classList.add("is-visible"));
-} else {
-  const revealObserver = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add("is-visible");
-        observer.unobserve(entry.target);
-      });
-    },
-    { rootMargin: "0px 0px -8% 0px", threshold: 0.1 },
-  );
-
-  revealElements.forEach((element) => revealObserver.observe(element));
-}
-
 const year = document.querySelector("[data-year]");
 if (year) year.textContent = new Date().getFullYear();
 
@@ -90,7 +69,7 @@ if (contactForm) {
   const setSubmitting = (isSubmitting) => {
     contactForm.classList.toggle("is-submitting", isSubmitting);
     if (submitButton) submitButton.disabled = isSubmitting;
-    if (submitLabel) submitLabel.textContent = isSubmitting ? "Sending request…" : "Start a conversation";
+    if (submitLabel) submitLabel.textContent = isSubmitting ? "Sending request…" : "Discuss your network";
   };
 
   const validateEmail = () => {
