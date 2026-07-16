@@ -50,17 +50,37 @@ if (header && headerSentinel && "IntersectionObserver" in window) {
   headerObserver.observe(headerSentinel);
 }
 
-const motionTargets = document.querySelectorAll(".experience-console, .journey-list, .about-mark");
+const motionTargets = document.querySelectorAll(".experience-console, .proof-response, .offer-list, .journey-list, .about-mark");
 if (!reducedMotion.matches && motionTargets.length && "IntersectionObserver" in window) {
+  let lastMotionScrollY = window.scrollY;
+  let motionDirection = "down";
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      const nextScrollY = window.scrollY;
+      if (Math.abs(nextScrollY - lastMotionScrollY) > 2) {
+        motionDirection = nextScrollY > lastMotionScrollY ? "down" : "up";
+        lastMotionScrollY = nextScrollY;
+      }
+    },
+    { passive: true },
+  );
+
   const motionObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
+        entry.target.classList.remove("motion-from-above", "motion-from-below");
+        if (!entry.isIntersecting) {
+          entry.target.classList.remove("is-in-view");
+          return;
+        }
+
+        entry.target.classList.add(motionDirection === "up" ? "motion-from-above" : "motion-from-below");
         entry.target.classList.add("is-in-view");
-        motionObserver.unobserve(entry.target);
       });
     },
-    { rootMargin: "0px 0px -12%", threshold: 0.28 },
+    { rootMargin: "-8% 0px -8%", threshold: 0.14 },
   );
   motionTargets.forEach((target) => motionObserver.observe(target));
 }

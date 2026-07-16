@@ -152,12 +152,14 @@ The system is flat and optically layered. It uses near-black tonal shifts, one-p
 
 ## Motion
 
-Motion behaves like refraction becoming legible: brief, directional, and tied to continuity or state. The page uses one composed hero entrance, then reserves scroll-triggered choreography for the continuity diagram, the real three-stage journey, and the Caligo wings.
+Motion behaves like refraction becoming legible: brief, directional, and tied to continuity or state. The page uses one composed hero entrance, then reserves scroll-triggered choreography for the continuity diagram, public proof, managed service list, the real three-stage journey, and the Caligo wings.
 
 - **Timing:** `100-150ms` for press feedback, `180-240ms` for navigation and status changes, and `420-700ms` for authored entrances.
 - **Easing:** Exponential or quartic ease-out only. No bounce, elastic, spring, or looping decorative motion.
 - **Hero:** Copy settles by no more than `10px`; the world image resolves from a restrained scale and tonal shift; a single refracted seam crosses the image once.
 - **Continuity:** The player session resolves in three events, followed by one light pass across the continuous route. The sequence does not loop.
+- **Scroll direction:** Authored sequences enter from below while the visitor moves down and from above while the visitor moves back up. A sequence resets only after leaving the viewport, so it can replay naturally in either direction without hiding resting content.
+- **Lists:** Proof and service rows use short capped staggers. Their total delay remains below `250ms`, and borders stay stable while text settles into place.
 - **Feedback:** The mobile menu moves as one surface, validation receives a short horizontal correction, and submitting uses a bounded progress line.
 - **Accessibility:** Content is visible without animation classes. `prefers-reduced-motion: reduce` reduces all animation and transition durations to effectively instant.
 

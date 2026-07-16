@@ -864,6 +864,14 @@ li {
   line-height: 1.7;
 }
 
+.motion-from-below {
+  --motion-y: 12px;
+}
+
+.motion-from-above {
+  --motion-y: -12px;
+}
+
 .experience-console.is-in-view .event-stream li {
   animation: console-event-resolve 520ms var(--ease) both;
 }
@@ -874,8 +882,8 @@ li {
 .experience-console.is-in-view .console-live i { animation: status-signal 680ms 520ms var(--ease-out-quart) 2; }
 
 @keyframes console-event-resolve {
-  from { transform: translateX(-8px); filter: brightness(0.72); }
-  to { transform: translateX(0); filter: brightness(1); }
+  from { opacity: 0.58; transform: translate3d(-8px, var(--motion-y, 12px), 0); filter: brightness(0.72); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); filter: brightness(1); }
 }
 
 @keyframes session-route-resolve {
@@ -1004,6 +1012,18 @@ li {
   line-height: 1.7;
 }
 
+.proof-response.is-in-view article {
+  animation: evidence-row-settle 480ms var(--ease-out-quart) both;
+}
+
+.proof-response.is-in-view article:nth-child(2) { animation-delay: 70ms; }
+.proof-response.is-in-view article:nth-child(3) { animation-delay: 140ms; }
+
+@keyframes evidence-row-settle {
+  from { opacity: 0.62; transform: translate3d(0, var(--motion-y, 12px), 0); filter: brightness(0.8); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); filter: brightness(1); }
+}
+
 .program-section {
   display: grid;
   grid-template-columns: minmax(0, 0.8fr) minmax(420px, 1.2fr);
@@ -1051,6 +1071,20 @@ li {
   margin-top: 0.7rem;
   color: var(--muted);
   line-height: 1.7;
+}
+
+.offer-list.is-in-view article > * {
+  animation: service-row-settle 460ms var(--ease-out-quart) both;
+}
+
+.offer-list.is-in-view article:nth-child(2) > * { animation-delay: 55ms; }
+.offer-list.is-in-view article:nth-child(3) > * { animation-delay: 110ms; }
+.offer-list.is-in-view article:nth-child(4) > * { animation-delay: 165ms; }
+.offer-list.is-in-view article:nth-child(5) > * { animation-delay: 220ms; }
+
+@keyframes service-row-settle {
+  from { opacity: 0.62; transform: translate3d(0, var(--motion-y, 12px), 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
 }
 
 .journey-section {
@@ -1138,8 +1172,8 @@ li {
 }
 
 @keyframes stage-copy-settle {
-  from { transform: translateY(8px); }
-  to { transform: translateY(0); }
+  from { opacity: 0.62; transform: translate3d(0, var(--motion-y, 12px), 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
 }
 
 .journey-list h3 {
@@ -1203,13 +1237,13 @@ li {
 }
 
 @keyframes wing-left-resolve {
-  from { transform: translateX(12px) scaleX(-0.9); filter: brightness(0.72); }
-  to { transform: translateX(0) scaleX(-1); filter: brightness(1); }
+  from { transform: translate3d(12px, var(--motion-y, 12px), 0) scaleX(-0.9); filter: brightness(0.72); }
+  to { transform: translate3d(0, 0, 0) scaleX(-1); filter: brightness(1); }
 }
 
 @keyframes wing-right-resolve {
-  from { transform: translateX(-12px) scaleX(0.9); filter: brightness(0.72); }
-  to { transform: translateX(0) scaleX(1); filter: brightness(1); }
+  from { transform: translate3d(-12px, var(--motion-y, 12px), 0) scaleX(0.9); filter: brightness(0.72); }
+  to { transform: translate3d(0, 0, 0) scaleX(1); filter: brightness(1); }
 }
 
 .about-copy p {
