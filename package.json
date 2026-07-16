@@ -4,7 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "node scripts/build.mjs",
+    "build": "node scripts/check-characters.mjs && node scripts/build.mjs",
+    "check:characters": "node scripts/check-characters.mjs",
     "dev": "node scripts/dev-server.mjs",
     "start": "node scripts/dev-server.mjs --directory dist"
   }

@@ -13,7 +13,7 @@ const successPage = (message) => `<!doctype html>
 const errorPage = (message) => `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#06080f"><title>Project Caligo | Contact</title></head>
-<body style="margin:0;padding:3rem;background:#06080f;color:#edf1ff;font-family:Arial,sans-serif"><main><h1>We couldn’t send your request.</h1><p>${message}</p><p><a style="color:#b9c4ff" href="mailto:contact@industrium.net">Email contact@industrium.net</a> or <a style="color:#b9c4ff" href="/#contact">return to the form</a>.</p></main></body></html>`;
+<body style="margin:0;padding:3rem;background:#06080f;color:#edf1ff;font-family:Arial,sans-serif"><main><h1>We couldn't send your request.</h1><p>${message}</p><p><a style="color:#b9c4ff" href="mailto:contact@industrium.net">Email contact@industrium.net</a> or <a style="color:#b9c4ff" href="/#contact">return to the form</a>.</p></main></body></html>`;
 
 const sendResult = (response, status, body, html = false) => {
   response.statusCode = status;
@@ -151,12 +151,12 @@ export default async function contact(request, response) {
 
     if (!webhookResponse.ok) {
       console.error(`Discord webhook returned ${webhookResponse.status}.`);
-      return send(502, { error: "We couldn’t deliver your request just now." });
+      return send(502, { error: "We couldn't deliver your request just now." });
     }
 
     return send(200, { ok: true });
   } catch (error) {
     console.error("Discord webhook request failed.", error instanceof Error ? error.message : "Unknown error");
-    return send(502, { error: "We couldn’t deliver your request just now." });
+    return send(502, { error: "We couldn't deliver your request just now." });
   }
 }

@@ -80,7 +80,7 @@
       "kind": "button",
       "refersTo": "text-link",
       "description": "A low-emphasis secondary path paired with a primary action.",
-      "html": "<a class=\"ds-text-link\" href=\"#\">See Mirage ↘</a>",
+      "html": "<a class=\"ds-text-link\" href=\"#\">See Mirage</a>",
       "css": ".ds-text-link { display: inline-flex; gap: 9px; padding: 10px 0; border-bottom: 1px solid rgba(191,210,255,.3); color: #c8cee0; font: 400 13px 'Avenir Next', Avenir, sans-serif; text-decoration: none; transition: color 180ms ease, border-color 180ms ease; } .ds-text-link:hover, .ds-text-link:focus-visible { border-color: var(--accent, #8d9bff); color: var(--text, #edf1ff); } .ds-text-link:focus-visible { outline: 2px solid var(--accent-soft, #b9c4ff); outline-offset: 4px; }"
     },
     {

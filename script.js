@@ -140,7 +140,7 @@ if (contactForm) {
   const setSubmitting = (isSubmitting) => {
     contactForm.classList.toggle("is-submitting", isSubmitting);
     if (submitButton) submitButton.disabled = isSubmitting;
-    if (submitLabel) submitLabel.textContent = isSubmitting ? "Sending request…" : "Discuss your network";
+    if (submitLabel) submitLabel.textContent = isSubmitting ? "Sending request..." : "Discuss your network";
   };
 
   const validateEmail = () => {
@@ -169,11 +169,11 @@ if (contactForm) {
   });
 
   window.addEventListener("offline", () => {
-    setStatus("You’re offline. Your message has not been sent.", "offline");
+    setStatus("You're offline. Your message has not been sent.", "offline");
   });
 
   window.addEventListener("online", () => {
-    if (status?.dataset.state === "offline") setStatus("You’re back online. You can send your request now.");
+    if (status?.dataset.state === "offline") setStatus("You're back online. You can send your request now.");
   });
 
   contactForm.addEventListener("submit", async (event) => {
@@ -188,12 +188,12 @@ if (contactForm) {
     }
 
     if (!navigator.onLine) {
-      setStatus("You’re offline. Your message has not been sent.", "offline");
+      setStatus("You're offline. Your message has not been sent.", "offline");
       return;
     }
 
     setSubmitting(true);
-    setStatus("Sending your request…", "submitting");
+    setStatus("Sending your request...", "submitting");
 
     const formData = new FormData(contactForm);
     const payload = Object.fromEntries(formData.entries());
@@ -206,7 +206,7 @@ if (contactForm) {
       });
 
       const result = await response.json().catch(() => ({}));
-      if (!response.ok) throw new Error(result.error || "We couldn’t send your request.");
+      if (!response.ok) throw new Error(result.error || "We couldn't send your request.");
 
       contactForm.reset();
       resetStartTime();
@@ -215,7 +215,7 @@ if (contactForm) {
       contactForm.classList.add("is-success");
       setStatus("Request received. A Caligo team member will reply to you by email.", "success");
     } catch (error) {
-      const message = error instanceof Error ? error.message : "We couldn’t send your request.";
+      const message = error instanceof Error ? error.message : "We couldn't send your request.";
       setStatus(`${message} You can also email contact@industrium.net.`, "error");
     } finally {
       setSubmitting(false);

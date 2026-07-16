@@ -202,7 +202,7 @@ The contact section uses a direct two-column composition: a benefit-led invitati
 
 - **Fields:** Persistent mono labels, Frosted White input text, accessible Distant Silver helper text, and a precise two-pixel Periwinkle focus rule.
 - **Required data:** Email only. Network name and message are explicitly marked optional.
-- **Primary action:** “Start a conversation” uses the strongest resting-state contrast in the section. Email and Discord remain subordinate alternatives.
+- **Primary action:** "Start a conversation" uses the strongest resting-state contrast in the section. Email and Discord remain subordinate alternatives.
 - **States:** Missing and malformed email errors are distinct. Submitting, success, delivery failure, and offline states are announced through a live region.
 - **Resilience:** Content remains visible without JavaScript, and the native form path returns a standalone confirmation or recovery page.
 - **Security:** The browser never contains or exposes the Discord webhook URL; delivery occurs only through the server endpoint.

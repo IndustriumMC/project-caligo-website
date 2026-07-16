@@ -21,6 +21,10 @@ npm start
 
 The production-ready static site is generated in `dist/`. The build has no external dependencies.
 
+## Character rules
+
+Human-written text follows the plain punctuation rules in `CHARACTER_RULES.md`. Run `npm run check:characters` to validate copy, documentation, comments, and interface strings. The production build runs this check automatically.
+
 ## Deploy to Vercel
 
 1. Import this Git repository into Vercel.
