@@ -32,6 +32,10 @@ Funds support continued development of the Industrium Minecraft network, the Pro
 
 The team reviews each form submission for network fit. A suitable lead receives a direct reply and begins a discussion about requirements and commercial terms. The form may collect optional proxy and backend counts to make the first review more useful.
 
+## Regional Availability
+
+Mirage is currently operated from servers hosted in France and is primarily offered to European networks. Networks in the United States and other regions are still welcome to enquire. They must understand that greater physical distance between their backend servers and the Mirage proxies in France may increase latency. Regional suitability is discussed with the team instead of being treated as an automatic rejection.
+
 ## Proof
 
 The first public Mirage demonstration is available at `https://youtu.be/6i3NGjgjXhM` and has passed 30,000 views. The response includes positive reactions and comments from people who had attempted similar systems but stopped because of complexity or maintenance requirements. This supports the managed-service position: Project Caligo provides the team and ongoing operation that individual network builders may not want to maintain alone.
@@ -61,10 +65,11 @@ Precise, ambitious, and technically confident. The experience should combine Pro
 2. Sell the outcome, not the mechanism. Lead with retained control, cross-server visibility, managed operation, and ambitious world design.
 3. Present Mirage as an alternative for specific network needs, not as a rival to familiar Minecraft infrastructure.
 4. Make qualification clear. Mirage requires at least one proxy and two backend servers.
-5. Make trust visible. Every claim, visual, and interaction should feel deliberate enough for an infrastructure purchase.
-6. Keep the path to conversation obvious. The form is the primary conversion action; email and Discord are clear alternatives.
-7. Preserve the illusion. Use Project Caligo's butterfly metaphor and faceted visual language to make separation becoming continuity memorable.
-8. Borrow clarity, not appearance. Use PaperMC's direct hierarchy and useful navigation while retaining Project Caligo's distinct identity.
+5. Be honest about regional performance. Infrastructure is currently hosted in France. European networks are the primary fit, while enquiries from other regions remain welcome with a clear latency caveat.
+6. Make trust visible. Every claim, visual, and interaction should feel deliberate enough for an infrastructure purchase.
+7. Keep the path to conversation obvious. The form is the primary conversion action; email and Discord are clear alternatives.
+8. Preserve the illusion. Use Project Caligo's butterfly metaphor and faceted visual language to make separation becoming continuity memorable.
+9. Borrow clarity, not appearance. Use PaperMC's direct hierarchy and useful navigation while retaining Project Caligo's distinct identity.
 
 ## Accessibility & Inclusion
 
